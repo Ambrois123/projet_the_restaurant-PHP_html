@@ -6,7 +6,7 @@ abstract class Connexion
 
     private static function setBdd()
     {
-        self::$pdo = new PDO('mysql:host=localhost;dbname=the_restaurant;charset=utf8', 'restaurant', 'Dev_project_restaurant');
+        self::$pdo = new PDO('mysql:host=localhost;dbname=the_restaurant;charset=utf8', 'restaurant_project', 'Dev_project_restaurant');
         self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     }
 
