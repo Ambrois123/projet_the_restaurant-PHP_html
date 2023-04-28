@@ -5,7 +5,7 @@ ob_start();
 
 
 
-<main class="main_container_client"></main>
+
         <section class="container_client">
             <div class="container_client_title">
                 <h1>Devenez client</h1>

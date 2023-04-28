@@ -3,13 +3,23 @@
 ob_start();
 ?>
 
-<main class="main_container_reservation">
-        <div class="container_reservation">
+<main class="container_reservation">
             <div class="container_reservation_title">
                 <h1>Réservez votre table</h1>
                 <p>Le restaurant vous accueille dans un 
                     cadre exceptionnel pour des moments inoubliables.</p>
             </div>
+            <?php 
+            if(!empty($_SESSION['error'])):
+                    ?>
+                    <div class="error_container">
+                        <p class="error"><?=$_SESSION['error']['msg_input'];?></p>
+                    </div>
+                    
+                    <?php 
+                    unset($_SESSION['error']);
+                    
+                    endif; ?>
             <div class="container_reservation_form">
             <form action="<?= URL ?>reservation/resa_validate" method="post">
 
@@ -29,7 +39,7 @@ ob_start();
                 <input type="number" min="0" id="couvert" name="couvert" placeholder="Nombre de couverts" >
                 
                 
-                <input type="datetime-local" id="date" name="date" >
+                <input type="datetime-local" id="date" name="date" placeholder="Date et heure">
 
                 
                 <textarea name="allergies" id="allergies" cols="4" rows="4" placeholder="Des allergies ?"  ></textarea>
@@ -43,7 +53,6 @@ ob_start();
                 </div>
             </form>
             </div>
-        </div>
 </main>
 
 

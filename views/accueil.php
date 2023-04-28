@@ -2,7 +2,7 @@
 
 ob_start();
 unset($_SESSION['alert']);
-echo password_hash("8520", PASSWORD_DEFAULT);
+
 ?>
  
 <main class="accueil_container">

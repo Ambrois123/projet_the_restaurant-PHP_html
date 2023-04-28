@@ -1,12 +1,12 @@
 <?php 
 
 try{
-    $pdo = new PDO("mysql:host=localhost","restaurant_project", "Dev_project_restaurant");
+    $pdo = new PDO("mysql:host=localhost","xxxxxxxxxxxxx", "xxxxxxxxxxxxxxx");
     $pdo->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::ATTR_ERRMODE);
 
-if ($pdo->exec('CREATE DATABASE the_restaurant') !==false) {
+if ($pdo->exec('CREATE DATABASE yyyyyyyyyyyyyy') !==false) {
 
-    $serveurRest = new PDO("mysql:host=localhost;dbname=the_restaurant","restaurant_project","Dev_project_restaurant");
+    $serveurRest = new PDO("mysql:host=localhost;dbname=yyyyyyyyyyyyyy","xxxxxxxxxxxxx","xxxxxxxxxxxxxxx");
 
     if ($serveurRest->exec('CREATE TABLE reservation(
         reservation_id INT(11) PRIMARY KEY not null auto_increment,

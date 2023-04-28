@@ -48,7 +48,7 @@
     </header>
     <!--header ends-->
 
-    <main >
+    <main class="mainTemplate">
         <!--variable php-->
         <?= $content; ?>
     </main>

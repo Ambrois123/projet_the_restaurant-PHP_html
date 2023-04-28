@@ -17,7 +17,15 @@ class VisiteurReservationController
 
         public function InsertVisiteurReservation()
         {
-            $this->visiteurReservationModel->validationReservationForm($_POST['username'], $_POST['email'], $_POST['phone'], $_POST['couvert'], $_POST['date'], $_POST['allergies'], $_POST['statut']);
+            if (empty($_POST['username']) || empty($_POST['email']) || empty($_POST['phone']) || 
+            empty($_POST['couvert']) || empty($_POST['date']) || empty($_POST['allergies'])) {
+                $_SESSION['error'] = [
+                    "msg_input" => "Veuillez remplir tous les champs",
+                ];
+                header("Location:".URL."client");
+
+            }else{
+                $this->visiteurReservationModel->validationReservationForm($_POST['username'], $_POST['email'], $_POST['phone'], $_POST['couvert'], $_POST['date'], $_POST['allergies'], $_POST['statut']);
             $_SESSION['resa'] = [
                 "name" => $_POST['username'],
                 "email" => $_POST['email'],
@@ -28,6 +36,9 @@ class VisiteurReservationController
                 "statut" => $_POST['statut']
             ];
             header("Location: ".URL."resa_validate");
+            }
+            
+            
         }
 
 }
